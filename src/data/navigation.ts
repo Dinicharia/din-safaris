@@ -6,5 +6,7 @@ export const navLinks = [
   { label: 'Destinations', href: '/destinations' },
   { label: 'Experiences', href: '/experiences' },
   { label: 'Sample itineraries', href: '/sample-itineraries' },
+  { label: 'About', href: '/about' },
+  { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '#contact' },
 ]
