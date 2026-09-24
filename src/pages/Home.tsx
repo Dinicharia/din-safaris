@@ -5,7 +5,9 @@ import Experiences from '../components/Experiences'
 import FeaturedDestinations from '../components/FeaturedDestinations'
 import Hero from '../components/Hero'
 import HowItWorks from '../components/HowItWorks'
+import SampleItineraries from '../components/SampleItineraries'
 import WhyKenya from '../components/WhyKenya'
+import WhyTravelWithUs from '../components/WhyTravelWithUs'
 
 function Home() {
   return (
@@ -15,6 +17,8 @@ function Home() {
       <FeaturedDestinations />
       <Experiences />
       <HowItWorks />
+      <SampleItineraries />
+      <WhyTravelWithUs />
     </main>
   )
 }
