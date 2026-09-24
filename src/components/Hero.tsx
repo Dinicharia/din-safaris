@@ -12,7 +12,7 @@ function Hero() {
           <h1 className="mt-4 font-display text-4xl font-bold leading-tight md:text-6xl">Discover Kenya. We&apos;ll Arrange the Journey.</h1>
           <p className="mt-6 max-w-xl text-lg opacity-90">From airport pickup and safari camps to charter flights and beach escapes, Din Safaris takes care of every detail of your Kenya trip.</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="#plan">Plan My Trip</Button>
+            <Button href="/plan-my-trip">Plan My Trip</Button>
             <Button href="#contact" variant="outlineLight">WhatsApp Us</Button>
           </div>
         </div>

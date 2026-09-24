@@ -16,7 +16,7 @@ function SampleItineraries() {
             <ul className="mt-4 list-disc space-y-1 pl-5">
               {trip.stops.map((stop) => <li key={stop}>{stop}</li>)}
             </ul>
-            <Button href="#plan" variant="secondary" className="mt-6">Request a quote</Button>
+            <Button href="/plan-my-trip" variant="secondary" className="mt-6">Request a quote</Button>
           </Card>
         ))}
       </div>

@@ -9,6 +9,7 @@ import ExperiencesPage from './pages/Experiences'
 import FAQ from './pages/FAQ'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
+import PlanTrip from './pages/PlanTrip'
 import SafariPackages from './pages/SafariPackages'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="sample-itineraries" element={<SafariPackages />} />
           <Route path="about" element={<About />} />
           <Route path="faq" element={<FAQ />} />
+          <Route path="plan-my-trip" element={<PlanTrip />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

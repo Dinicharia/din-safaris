@@ -22,7 +22,7 @@ function Header() {
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Main">
           {navLinks.map((link) => <AppLink key={link.href} href={link.href} className={linkStyle}>{link.label}</AppLink>)}
-          <Button href="#plan">Plan My Trip</Button>
+          <Button href="/plan-my-trip">Plan My Trip</Button>
         </nav>
 
         <button type="button" className="rounded-lg px-3 py-2 font-medium text-forest lg:hidden" aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen(!open)}>
@@ -33,7 +33,7 @@ function Header() {
       {open && (
         <nav className="flex flex-col gap-3 border-t border-sand px-6 py-4 lg:hidden" aria-label="Mobile">
           {navLinks.map((link) => <AppLink key={link.href} href={link.href} className={linkStyle} onClick={() => setOpen(false)}>{link.label}</AppLink>)}
-          <Button href="#plan" className="text-center">Plan My Trip</Button>
+          <Button href="/plan-my-trip" className="text-center">Plan My Trip</Button>
         </nav>
       )}
     </header>
