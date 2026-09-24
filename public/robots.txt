@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dinicharia.github.io/din-safaris/sitemap.xml
