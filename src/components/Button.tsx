@@ -3,6 +3,7 @@
 // outline (for light backgrounds) and outlineLight (for dark backgrounds).
 
 import type { ReactNode } from 'react'
+import AppLink from './AppLink'
 
 type ButtonProps = {
   children: ReactNode
@@ -22,7 +23,7 @@ const styles = {
 
 function Button({ children, href, variant = 'primary', className = '' }: ButtonProps) {
   const classes = `${base} ${styles[variant]} ${className}`
-  return <a href={href} className={classes}>{children}</a>
+  return <AppLink href={href} className={classes}>{children}</AppLink>
 }
 
 export default Button

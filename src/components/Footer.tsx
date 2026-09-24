@@ -4,6 +4,7 @@
 import logo from '../assets/logo-mark.svg'
 import { contact } from '../data/contact'
 import { navLinks } from '../data/navigation'
+import AppLink from './AppLink'
 
 function Footer() {
   const year = new Date().getFullYear()
@@ -22,7 +23,7 @@ function Footer() {
         <nav aria-label="Footer">
           <h2 className="font-display text-lg font-bold">Explore</h2>
           <ul className="mt-3 space-y-2">
-            {navLinks.map((link) => <li key={link.href}><a href={link.href} className="opacity-80 hover:opacity-100">{link.label}</a></li>)}
+            {navLinks.map((link) => <li key={link.href}><AppLink href={link.href} className="opacity-80 hover:opacity-100">{link.label}</AppLink></li>)}
           </ul>
         </nav>
 
