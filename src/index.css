@@ -1,7 +1,24 @@
 /* src/index.css */
-/* Minimal global styles. Tailwind replaces this in Phase 5. */
+@import "tailwindcss";
 
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
+/* Din Safaris design tokens.
+   Every colour and font used on the site comes from here,
+   so a brand change means editing only this block. */
+@theme {
+  --color-forest: #1F3D2B;
+  --color-forest-dark: #142A1D;
+  --color-gold: #E0A526;
+  --color-cream: #FAF6EC;
+  --color-sand: #E8D9B8;
+  --color-earth: #8A5A3B;
+  --color-ink: #1C1A16;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
 }
