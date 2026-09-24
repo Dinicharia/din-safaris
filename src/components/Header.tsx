@@ -4,14 +4,7 @@
 import { useState } from 'react'
 import logo from '../assets/logo-mark.svg'
 import Button from './Button'
-
-const links = [
-  { label: 'Destinations', href: '#destinations' },
-  { label: 'Experiences', href: '#experiences' },
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'Sample itineraries', href: '#itineraries' },
-  { label: 'Contact', href: '#contact' },
-]
+import { navLinks as links } from '../data/navigation'
 
 const linkStyle = 'font-medium text-forest hover:text-earth'
 

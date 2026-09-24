@@ -5,6 +5,7 @@ import Experiences from '../components/Experiences'
 import FeaturedDestinations from '../components/FeaturedDestinations'
 import Hero from '../components/Hero'
 import HowItWorks from '../components/HowItWorks'
+import PlanCta from '../components/PlanCta'
 import SampleItineraries from '../components/SampleItineraries'
 import WhyKenya from '../components/WhyKenya'
 import WhyTravelWithUs from '../components/WhyTravelWithUs'
@@ -19,6 +20,7 @@ function Home() {
       <HowItWorks />
       <SampleItineraries />
       <WhyTravelWithUs />
+      <PlanCta />
     </main>
   )
 }
