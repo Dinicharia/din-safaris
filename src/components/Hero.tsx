@@ -2,6 +2,7 @@
 // Top-of-page hero: main message and the two primary calls to action.
 
 import Button from './Button'
+import WhatsAppButton from './WhatsAppButton'
 
 function Hero() {
   return (
@@ -13,7 +14,7 @@ function Hero() {
           <p className="mt-6 max-w-xl text-lg opacity-90">From airport pickup and safari camps to charter flights and beach escapes, Din Safaris takes care of every detail of your Kenya trip.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/plan-my-trip">Plan My Trip</Button>
-            <Button href="#contact" variant="outlineLight">WhatsApp Us</Button>
+            <WhatsAppButton variant="outlineLight" />
           </div>
         </div>
         <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border-2 border-dashed border-sand/50 bg-forest-dark p-6 text-center text-sm text-sand/70">

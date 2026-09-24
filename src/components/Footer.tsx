@@ -1,9 +1,10 @@
 // src/components/Footer.tsx
-// Site footer: brand, links and contact placeholders.
+// Site footer: brand, links and contact details.
 
 import logo from '../assets/logo-mark.svg'
 import { contact } from '../data/contact'
 import { navLinks } from '../data/navigation'
+import { mailtoLink, whatsappLink } from '../utils/contactLinks'
 import AppLink from './AppLink'
 
 function Footer() {
@@ -29,9 +30,9 @@ function Footer() {
 
         <div>
           <h2 className="font-display text-lg font-bold">Contact</h2>
-          <ul className="mt-3 space-y-2 opacity-80">
-            <li>WhatsApp: {contact.whatsappNumber}</li>
-            <li>Email: {contact.email}</li>
+          <ul className="mt-3 space-y-2">
+            <li className="opacity-80">WhatsApp: <AppLink href={whatsappLink()} className="underline hover:opacity-100">{contact.whatsappDisplay}</AppLink></li>
+            <li className="opacity-80">Email: <AppLink href={mailtoLink('Kenya trip enquiry')} className="underline hover:opacity-100">{contact.email}</AppLink></li>
           </ul>
         </div>
       </div>

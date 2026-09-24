@@ -1,18 +1,19 @@
 // src/components/EnquiryConfirmation.tsx
 // Shown after the form is submitted. Nothing has been sent or saved (there is no
-// backend yet), so this says so plainly and hands the visitor a ready-to-send message.
+// backend yet), so this says so plainly and gives the visitor ways to send the message.
 
 import { useState } from 'react'
 import { contact } from '../data/contact'
+import EmailButton from './EmailButton'
 import Section from './Section'
+import WhatsAppButton from './WhatsAppButton'
 
 type EnquiryConfirmationProps = {
   message: string
   onEdit: () => void
 }
 
-const primaryButton = 'rounded-full bg-gold px-6 py-3 font-medium text-ink hover:brightness-110'
-const outlineButton = 'rounded-full border-2 border-forest px-6 py-3 font-medium text-forest hover:bg-forest hover:text-cream'
+const copyButton = 'rounded-full border-2 border-forest px-6 py-3 font-medium text-forest hover:bg-forest hover:text-cream'
 
 function EnquiryConfirmation({ message, onEdit }: EnquiryConfirmationProps) {
   const [status, setStatus] = useState<'idle' | 'copied' | 'failed'>('idle')
@@ -38,16 +39,20 @@ function EnquiryConfirmation({ message, onEdit }: EnquiryConfirmationProps) {
         </div>
 
         <div className="flex flex-wrap gap-3">
-          <button type="button" onClick={copyMessage} className={primaryButton}>Copy message</button>
-          <button type="button" onClick={onEdit} className={outlineButton}>Edit my details</button>
+          <WhatsAppButton label="Send on WhatsApp" message={message} />
+          <EmailButton label="Send by email" subject="Kenya trip enquiry" body={message} variant="secondary" />
+        </div>
+
+        <div className="flex flex-wrap gap-3">
+          <button type="button" onClick={copyMessage} className={copyButton}>Copy message</button>
+          <button type="button" onClick={onEdit} className={copyButton}>Edit my details</button>
         </div>
         <p aria-live="polite" className="text-sm">
           {status === 'copied' && 'Copied. Paste it into WhatsApp or an email to us.'}
           {status === 'failed' && 'Could not copy automatically. Please select the text above and copy it yourself.'}
         </p>
 
-        <p>WhatsApp: {contact.whatsappNumber} · Email: {contact.email}</p>
-        <p className="text-sm text-ink/70">Buttons that open WhatsApp or your email app with this message already filled in are added in the next phase, once real contact details are available.</p>
+        <p className="text-sm text-ink/70">No email app on your device? Copy the message and send it to {contact.email}, or message us on WhatsApp at {contact.whatsappDisplay}.</p>
       </div>
     </Section>
   )
