@@ -6,9 +6,13 @@ import { contact } from '../data/contact'
 
 const defaultWhatsAppMessage = 'Hello Din Safaris, I would like help planning a Kenya safari.'
 
-// https://wa.me/<number>?text=<message> is WhatsApp's official "click to chat" link.
+// WhatsApp's "click to chat" link needs the number as digits only.
+// Removing everything else means a typo such as "+254 714 606531" cannot break the link.
+const whatsappDigits = contact.whatsappNumber.replace(/\D/g, '')
+
+// https://wa.me/<number>?text=<message>
 export function whatsappLink(message: string = defaultWhatsAppMessage): string {
-  return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(message)}`
+  return `https://wa.me/${whatsappDigits}?text=${encodeURIComponent(message)}`
 }
 
 // mailto: opens the visitor's email app with the address, subject and body filled in.
