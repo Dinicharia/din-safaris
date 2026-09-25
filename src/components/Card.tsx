@@ -9,7 +9,7 @@ type CardProps = {
   label?: string
 }
 
-const badge = 'inline-block rounded-full bg-sand px-3 py-1 text-xs font-medium text-earth'
+const badge = 'inline-block rounded-full bg-sand px-3 py-1 text-xs font-medium text-forest'
 
 function Card({ title, children, label }: CardProps) {
   return (
