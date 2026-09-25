@@ -25,8 +25,14 @@ function Header() {
           <Button href="/plan-my-trip">Plan My Trip</Button>
         </nav>
 
-        <button type="button" className="rounded-lg px-3 py-2 font-medium text-forest lg:hidden" aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen(!open)}>
-          {open ? 'Close' : 'Menu'}
+        <button type="button" className="rounded-lg p-2 text-forest lg:hidden" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)}>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+            {open ? (
+              <path d="M6 6 L18 18 M18 6 L6 18" />
+            ) : (
+              <path d="M4 6 H20 M4 12 H20 M4 18 H20" />
+            )}
+          </svg>
         </button>
       </div>
 
