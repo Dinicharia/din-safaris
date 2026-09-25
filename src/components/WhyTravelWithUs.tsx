@@ -1,11 +1,11 @@
 // src/components/WhyTravelWithUs.tsx
-// Reasons to travel with Din Safaris. Draft wording: every line must be true before launch.
+// Reasons to travel with Din Safaris. Every line must be true before launch.
 
 import Card from './Card'
 import Section from './Section'
 
 const reasons = [
-  { title: 'Based in Kenya', text: 'Din Safaris is a Kenya-based business, so your trip is arranged locally.' },
+  { title: 'Twenty years in Kenya', text: 'Two decades of arranging Kenya trips, built on close relationships with local guides and camps.' },
   { title: 'Everything arranged', text: 'Airport transfers, stays, activities and travel between destinations, including charter flights on request.' },
   { title: 'Planned around you', text: 'Your trip is built from your interests, dates and budget, not picked from a fixed list.' },
   { title: 'Easy to reach', text: 'Message or call us on WhatsApp, or send an email, and ask your questions before you decide.' },
