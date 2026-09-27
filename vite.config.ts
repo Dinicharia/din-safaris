@@ -4,5 +4,6 @@ import tailwindcss from '@tailwindcss/vite' // ADD
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/din-safaris/',
   plugins: [react(), tailwindcss()], // CHANGE: add tailwindcss() to the list
 })

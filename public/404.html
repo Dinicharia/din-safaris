@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // GitHub Pages serves this file for any unknown path. It encodes the
+      // requested path into the URL and redirects to the real index.html,
+      // which our router then reads and restores.
+      var path = window.location.pathname.replace('/din-safaris', '')
+      sessionStorage.setItem('redirectPath', path + window.location.search)
+      window.location.replace('/din-safaris/')
+    </script>
+  </head>
+  <body></body>
+</html>
