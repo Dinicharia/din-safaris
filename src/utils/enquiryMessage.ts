@@ -4,13 +4,25 @@
 
 import type { EnquiryForm } from '../types/enquiry'
 
+// Turns "2027-03-15" into "15 March 2027", which reads naturally in a message
+// and avoids any day/month ambiguity.
+function formatDate(isoDate: string): string {
+  if (!isoDate) return ''
+  const date = new Date(`${isoDate}T00:00:00`)
+  return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+}
+
 export function buildEnquiryMessage(form: EnquiryForm): string {
+  const dateLine = form.datesKnown
+    ? [formatDate(form.startDate), formatDate(form.endDate)].filter(Boolean).join(' to ')
+    : form.travelDates
+
   const details: [string, string][] = [
     ['Name', form.name],
     ['Email', form.email],
     ['WhatsApp', form.whatsapp],
     ['Country of residence', form.country],
-    ['Travel dates', form.travelDates],
+    ['Travel dates', dateLine],
     ['Number of travellers', form.travellers],
     ['Trip length', form.duration],
     ['Destinations of interest', form.destinations.join(', ')],

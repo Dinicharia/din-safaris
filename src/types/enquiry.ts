@@ -7,6 +7,9 @@ export type EnquiryForm = {
   email: string
   whatsapp: string
   country: string
+  datesKnown: boolean
+  startDate: string
+  endDate: string
   travelDates: string
   travellers: string
   duration: string

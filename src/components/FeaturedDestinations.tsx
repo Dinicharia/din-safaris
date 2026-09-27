@@ -1,11 +1,12 @@
 // src/components/FeaturedDestinations.tsx
 // Grid of destination cards, built from src/data/destinations.ts.
-// On the home page it shows a few plus a "view all" button; on its own page it shows all.
+// Each destination's photo is found automatically from its id.
 
 import Button from './Button'
 import Card from './Card'
 import Section from './Section'
 import { destinations } from '../data/destinations'
+import { publicUrl } from '../utils/publicUrl'
 
 type FeaturedDestinationsProps = {
   limit?: number
@@ -18,7 +19,11 @@ function FeaturedDestinations({ limit, viewAllHref }: FeaturedDestinationsProps)
   return (
     <Section id="destinations" title="Featured destinations" intro="A few of the places we can build your trip around. Tell us what you'd like to see and we'll arrange the rest." tone="sand">
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {shown.map((place) => <Card key={place.id} title={place.name} label={place.region}>{place.summary}</Card>)}
+        {shown.map((place) => (
+          <Card key={place.id} title={place.name} label={place.region} image={publicUrl(`images/destinations/${place.id}.jpg`)} imageAlt={`${place.name}, Kenya`}>
+            {place.summary}
+          </Card>
+        ))}
       </div>
       {viewAllHref && (
         <div className="mt-10 text-center">

@@ -12,7 +12,7 @@ type ButtonProps = {
   className?: string
 }
 
-const base = 'inline-block rounded-full px-6 py-3 font-medium transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold'
+const base = 'inline-block rounded-full px-6 py-3 font-medium shadow-md transition duration-200 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold'
 
 const styles = {
   primary: 'bg-gold text-ink hover:brightness-110',

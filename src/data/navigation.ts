@@ -3,6 +3,7 @@
 // "/..." links are pages. "#..." links jump to a section on the current page.
 
 export const navLinks = [
+  { label: 'Home', href: '/' },
   { label: 'Destinations', href: '/destinations' },
   { label: 'Experiences', href: '/experiences' },
   { label: 'Sample itineraries', href: '/sample-itineraries' },

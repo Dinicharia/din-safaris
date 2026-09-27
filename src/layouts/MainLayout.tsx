@@ -1,10 +1,12 @@
 // src/layouts/MainLayout.tsx
-// The frame shared by every page: header on top, footer at the bottom.
-// <Outlet /> is where the current page appears.
+// The frame shared by every page: header on top, footer at the bottom,
+// plus the floating WhatsApp button, the mobile sticky CTA bar, and page-specific SEO tags.
 
 import { Outlet } from 'react-router-dom'
+import FloatingWhatsApp from '../components/FloatingWhatsApp'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import MobileCta from '../components/MobileCta'
 import RouteSeo from '../components/RouteSeo'
 import ScrollToTop from '../components/ScrollToTop'
 
@@ -14,8 +16,12 @@ function MainLayout() {
       <RouteSeo />
       <ScrollToTop />
       <Header />
-      <Outlet />
-      <Footer />
+      <div className="pb-20 lg:pb-0">
+        <Outlet />
+        <Footer />
+      </div>
+      <FloatingWhatsApp />
+      <MobileCta />
     </>
   )
 }

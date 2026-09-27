@@ -9,11 +9,12 @@ import PageHeading from '../components/PageHeading'
 import Section from '../components/Section'
 import WhatsAppButton from '../components/WhatsAppButton'
 import { contact } from '../data/contact'
+import { publicUrl } from '../utils/publicUrl'
 
 function Contact() {
   return (
     <main>
-      <PageHeading title="Contact us" intro="Ask a question or start planning your Kenya trip. Choose the way that suits you." />
+      <PageHeading title="Contact us" intro="Ask a question or start planning your Kenya trip. Choose the way that suits you." image={publicUrl('images/destinations/kenyan-coast.jpg')} />
       <Section>
         <div className="grid gap-6 md:grid-cols-2">
           <Card title="WhatsApp chat">

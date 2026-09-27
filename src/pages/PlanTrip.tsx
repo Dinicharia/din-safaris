@@ -15,8 +15,9 @@ import { experiences } from '../data/experiences'
 import type { EnquiryErrors, EnquiryForm } from '../types/enquiry'
 import { buildEnquiryMessage } from '../utils/enquiryMessage'
 import { validateEnquiry } from '../utils/validateEnquiry'
+import { publicUrl } from '../utils/publicUrl'
 
-type TextKey = Exclude<keyof EnquiryForm, 'destinations' | 'interests'>
+type TextKey = Exclude<keyof EnquiryForm, 'destinations' | 'interests' | 'datesKnown'>
 type ListKey = 'destinations' | 'interests'
 
 const inputBase = 'w-full rounded-lg border bg-white px-4 py-3 text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest'
@@ -62,7 +63,7 @@ function PlanTrip() {
   if (submitted) {
     return (
       <main>
-        <PageHeading title="Thank you" intro="Your trip details are ready. One more step to reach us." />
+        <PageHeading title="Thank you" intro="Your trip details are ready. One more step to reach us." image={publicUrl('images/experiences/beach-and-safari.jpg')} />
         <EnquiryConfirmation message={buildEnquiryMessage(form)} onEdit={() => setSubmitted(false)} />
       </main>
     )
@@ -93,8 +94,34 @@ function PlanTrip() {
             <input type="text" autoComplete="country-name" {...bind('country')} />
           </Field>
 
-          <Field id="travelDates" label="Travel dates" hint="Exact dates, or a rough period such as a month and year.">
-            <input type="text" {...bind('travelDates')} />
+          <Field id="travelDates" label="Travel dates" hint="Choose exact dates if you have them, or describe a rough period.">
+            <div className="flex flex-wrap gap-4 text-sm">
+              <label className="flex items-center gap-2">
+                <input type="radio" name="datesMode" checked={!form.datesKnown} onChange={() => setForm({ ...form, datesKnown: false })} className="h-4 w-4 accent-forest" />
+                I'm still flexible
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="radio" name="datesMode" checked={form.datesKnown} onChange={() => setForm({ ...form, datesKnown: true })} className="h-4 w-4 accent-forest" />
+                I have exact dates
+              </label>
+            </div>
+
+            {form.datesKnown ? (
+              <div className="mt-3 grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="startDate" className="block text-sm text-ink/70">Start date</label>
+                  <input type="date" {...bind('startDate')} />
+                </div>
+                <div>
+                  <label htmlFor="endDate" className="block text-sm text-ink/70">End date</label>
+                  <input type="date" {...bind('endDate')} />
+                </div>
+              </div>
+            ) : (
+              <div className="mt-3">
+                <input type="text" placeholder="For example, March or April 2027" {...bind('travelDates')} />
+              </div>
+            )}
           </Field>
 
           <Field id="travellers" label="Number of travellers" required error={errors.travellers}>
