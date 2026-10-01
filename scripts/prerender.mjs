@@ -46,7 +46,7 @@ async function main() {
   console.log(`Local server running at http://localhost:${port}`)
 
   // 2. Launch a real, invisible browser.
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] })
   const page = await browser.newPage()
 
   for (const route of routes) {
